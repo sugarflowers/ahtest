@@ -1,7 +1,7 @@
 use std::error::Error;
 use anyhow::Context as _;
 
-fn my_func() -> Result<(), Box<dyn Error>> {
+pub fn my_func() -> Result<(), Box<dyn Error>> {
     std::fs::File::open("test.txt").with_context(|| "ファイル読込みのエラー")?;
     Ok(())
 }
